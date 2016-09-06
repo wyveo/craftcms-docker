@@ -1,0 +1,39 @@
+web:
+  build: .
+  ports:
+    - 80:80
+  volumes:
+    - ./log:/var/log
+  links:
+    - mariadb
+    - redis
+  # env vars are replaced in /craft/config
+  environment:
+    # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
+    LANG: C.UTF-8
+
+    # REDIS is linked
+    REDIS_HOST: redis
+
+    # DB is linked
+    DB_HOST: mariadb
+    DB_NAME: craft
+    DB_PORT: 3306
+    DB_USER: craft
+    DB_PASS: secret
+
+mariadb:
+  image: mariadb:10.1
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_USER: craft
+    MYSQL_PASSWORD: secret
+    MYSQL_DATABASE: craft
+  volumes:
+    # Persistent data
+    - /var/lib/mysql
+
+redis:
+  image: redis:alpine
+  volumes:
+    - /data:/data

@@ -4,7 +4,7 @@ This is a  [Craft CMS](https://craftcms.com/) base running on our [nginx-php-fpm
 
 Features:
 
- - Nginx 1.11.x, PHP-FPM 7.0.x
+ - Nginx 1.11.x, PHP-FPM 7.1.x, MariaDB 10.1.x
  - Redis caching
  - imageMagick image manipulation library
 
@@ -19,7 +19,7 @@ $ sudo docker-compose build
 ## Running
 To run the container:
 ```
-$ sudo docker-compose up
+$ sudo docker-compose up -d
 ```
 
 navigate to `your-ip-address/admin` to see Craft's installation page.

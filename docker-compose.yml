@@ -5,7 +5,7 @@ web:
   volumes:
     - ./log:/var/log
   links:
-    - mariadb
+    - postgres
     - redis
   # env vars are replaced in /craft/config
   environment:
@@ -16,22 +16,22 @@ web:
     REDIS_HOST: redis
 
     # DB is linked
-    DB_HOST: mariadb
-    DB_NAME: craft
-    DB_PORT: 3306
-    DB_USER: craft
+    DB_HOST: postgres
+    DB_NAME: craft3beta
+    DB_PORT: 5432
+    DB_USER: craft3beta
     DB_PASS: secret
 
-mariadb:
-  image: mariadb:10.1
+postgres:
+  image: postgres:latest
   environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_USER: craft
-    MYSQL_PASSWORD: secret
-    MYSQL_DATABASE: craft
+    POSTGRES_USER: craft3beta
+    POSTGRES_PASSWORD: secret
+    POSTGRES_DB: craft3beta
+    POSTGRES_INITDB_ARGS: "-E UTF8"
   volumes:
     # Persistent data
-    - /var/lib/mysql
+    - /var/lib/postgresql/data
 
 redis:
   image: redis:alpine

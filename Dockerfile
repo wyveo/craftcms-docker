@@ -2,30 +2,28 @@ FROM wyveo/nginx-php-fpm:latest
 
 MAINTAINER Colin Wilson "colin@wyveo.com"
 
-# Set craft cms version
-ENV CRAFTURL 'https://craftcms.com/latest.zip?accept_license=yes'
+# Composer - https://hub.docker.com/r/composer/composer/
+ENV COMPOSER_VERSION 1.4.1
 
-# Remove existing webroot files
-RUN rm -rf /usr/share/nginx/html/*
+RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
+  && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \
+  && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) !== trim(file_get_contents('/tmp/composer-setup.sig'))) { unlink('/tmp/composer-setup.php'); echo 'Invalid installer' . PHP_EOL; exit(1); }"
 
-# Download the latest Craft, save as craft.zip in current folder
-RUN wget $CRAFTURL -O "/craft.zip"
+RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --version=${COMPOSER_VERSION} && rm -rf /tmp/composer-setup.php
 
-# Extract craft to webroot
-RUN unzip -qqo /craft.zip 'craft/*' -d /usr/share/nginx/ && \
-    unzip -qqoj /craft.zip 'public/index.php' -d /usr/share/nginx/html
+# Remove existing webroot
+RUN rm -rf /usr/share/nginx/*
 
-# Remove default template files
-RUN rm -rf /usr/share/nginx/craft/templates/*
+# Create Craft project
+RUN composer create-project craftcms/craft /usr/share/nginx/ -s beta
 
 # Add default craft cms nginx config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
 
-# Add default config
-ADD ./config /usr/share/nginx/craft/config
+# Add database environment
+ADD ./config/.env.sample /usr/share/nginx/craft/.env
 
 # Cleanup
-RUN rm /craft.zip
 
 RUN chown -Rf nginx:nginx /usr/share/nginx/
 

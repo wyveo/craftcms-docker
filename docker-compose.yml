@@ -1,39 +1,39 @@
-web:
-  build: .
-  ports:
-    - 80:80
-  volumes:
-    - ./log:/var/log
-  links:
-    - postgres
-    - redis
-  # env vars are replaced in /craft/config
-  environment:
-    # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
-    LANG: C.UTF-8
+version: '2'
+services:
+    web:
+      image: wyveo/craftcms-docker:craft3beta
+      ports:
+        - 80:80
+      volumes:
+        - /var/log
+      links:
+        - postgres
+        - memcached
+      # env vars are replaced in .env
+      environment:
+        # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
+        LANG: C.UTF-8
 
-    # REDIS is linked
-    REDIS_HOST: redis
+        # MEMCACHED is linked
+        MEMCACHED_HOST: memcached
 
-    # DB is linked
-    DB_HOST: postgres
-    DB_NAME: craft3beta
-    DB_PORT: 5432
-    DB_USER: craft3beta
-    DB_PASS: secret
+        # DB is linked
+        DB_HOST: postgres
+        DB_NAME: craft3beta
+        DB_PORT: 5432
+        DB_USER: craft3beta
+        DB_PASS: secret
 
-postgres:
-  image: postgres:latest
-  environment:
-    POSTGRES_USER: craft3beta
-    POSTGRES_PASSWORD: secret
-    POSTGRES_DB: craft3beta
-    POSTGRES_INITDB_ARGS: "-E UTF8"
-  volumes:
-    # Persistent data
-    - /var/lib/postgresql/data
+    postgres:
+      image: postgres:latest
+      environment:
+        POSTGRES_USER: craft3beta
+        POSTGRES_PASSWORD: secret
+        POSTGRES_DB: craft3beta
+        POSTGRES_INITDB_ARGS: "-E UTF8"
+      volumes:
+        # Persistent data
+        - /var/lib/postgresql/data
 
-redis:
-  image: redis:alpine
-  volumes:
-    - /data:/data
+    memcached:
+      image: memcached:latest

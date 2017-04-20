@@ -21,7 +21,10 @@ RUN composer create-project craftcms/craft /usr/share/nginx/ -s beta
 ADD ./default.conf /etc/nginx/conf.d/default.conf
 
 # Add database environment
-ADD ./config/.env.sample /usr/share/nginx/.env
+ADD .env.sample /usr/share/nginx/.env
+
+# Add default config
+ADD ./config /usr/share/nginx/config
 
 RUN chown -Rf nginx:nginx /usr/share/nginx/
 

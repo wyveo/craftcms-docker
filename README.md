@@ -8,17 +8,11 @@ Features:
  - Redis caching
  - imageMagick image manipulation library
 
-## Building from source
-To build from source, clone the git repo and run docker-compose build:
+## Clone repo and run from source
+To run, clone the git repo and run `docker-compose up`:
 ```
 $ git clone -b craft3beta --single-branch https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker
-$ sudo docker-compose build
-```
-
-## Running
-To run the container:
-```
 $ sudo docker-compose up -d
 ```
 

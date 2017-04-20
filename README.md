@@ -5,10 +5,10 @@ This is a [Craft 3 Beta CMS](https://craftcms.com/3) base running on our [nginx-
 Features:
 
  - Nginx 1.11.x, PHP-FPM 7.1.x, PostgreSQL 9.6.x
- - Redis caching
+ - Memcached caching
  - imageMagick image manipulation library
 
-## Clone repo and run from source
+## Clone repo and run
 To run, clone the git repo and run `docker-compose up`:
 ```
 $ git clone -b craft3beta --single-branch https://github.com/wyveo/craftcms-docker.git

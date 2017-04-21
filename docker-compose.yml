@@ -1,9 +1,9 @@
 web:
-  build: .
+  image: wyveo/craftcms-docker:latest
   ports:
     - 80:80
   volumes:
-    - ./log:/var/log
+    - /var/log
   links:
     - mariadb
     - redis

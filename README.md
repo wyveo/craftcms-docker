@@ -1,25 +1,33 @@
-[![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-%20wyveo%2Fcraftcms--docker-blue.svg)](https://hub.docker.com/r/wyveo/craftcms-docker/) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker.svg)](http://microbadger.com/images/wyveo/craftcms-docker "Get your own image badge on microbadger.com") [![craftcms latest](https://img.shields.io/badge/craftcms-latest-red.svg)](https://craftcms.com/) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-%20wyveo%2Fcraftcms--docker-blue.svg)](https://hub.docker.com/r/wyveo/craftcms-docker/) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Introduction
-This is a  [Craft CMS](https://craftcms.com/) base running on our [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
+This is a  [Craft CMS](https://craftcms.com/) / [Craft 3 Beta](https://craftcms.com/3) base running on our [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
+#### Versioning
+| Docker Tag | Git Branch | Craft Release | Database | Caching |
+|-----|-------|-----|--------|--------|
+| latest | master | 2.6.2973 | MariaDB 10.1.22 | Redis 3.2.8 |
+| craft3beta | craft3beta |craft 3 beta 13 | PostgreSQL 9.6.2 | Memcached 1.4.36 |
 
 Features:
 
- - Nginx 1.11.x, PHP-FPM 7.1.x, MariaDB 10.1.x
- - Redis caching
+ - Nginx 1.11.x, PHP-FPM 7.1.x
  - imageMagick image manipulation library
 
-## Building from source
-To build from source, clone the git repo and run docker-compose build:
+## Clone repo and run
+To run, clone the git repo and run `docker-compose up`:
+#### Craft - [![version latest](https://img.shields.io/badge/version-latest-blue.svg)](https://craftcms.com/) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker.svg)](http://microbadger.com/images/wyveo/craftcms-docker "Get your own image badge on microbadger.com")
 ```
 $ git clone https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker
-$ sudo docker-compose build
-```
-
-## Running
-To run the container:
-```
 $ sudo docker-compose up -d
 ```
 
-navigate to `your-ip-address/admin` to see Craft's installation page.
+navigate to `http://<HOSTNAME>/admin` to begin installing Craft.
+
+#### Craft 3 Beta - [![version craft3beta](https://img.shields.io/badge/version-craft3beta-blue.svg)](https://craftcms.com/3) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft3beta.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft3beta "Get your own image badge on microbadger.com")
+```
+$ git clone -b craft3beta --single-branch https://github.com/wyveo/craftcms-docker.git
+$ cd craftcms-docker
+$ sudo docker-compose up -d
+```
+
+navigate to `http://<HOSTNAME>/index.php?p=admin` to begin installing Craft 3 Beta.

@@ -15,7 +15,7 @@ RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filenam
 RUN rm -rf /usr/share/nginx/* && \
 sed -i -e "s/memory_limit\s*=\s*.*/memory_limit = 256M/g" ${php_conf} && \
 sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = memcached/g" ${php_conf} && \
-sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = memcached:11211/g" ${php_conf}
+sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \${MEMCACHED_HOST}:11211/g" ${php_conf}
 
 # Create Craft project
 RUN composer create-project craftcms/craft /usr/share/nginx/ -s beta

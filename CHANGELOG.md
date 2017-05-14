@@ -1,3 +1,7 @@
+## [0.1.3] - 14-05-2017
+### Update
+- Upgrade Craft to 2.6.2980
+
 ## [0.1.2] - 03-05-2017
 ### Update
 - Upgrade Craft to 2.6.2978

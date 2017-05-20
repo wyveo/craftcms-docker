@@ -5,7 +5,7 @@ This is a  [Craft CMS](https://craftcms.com/) / [Craft 3 Beta](https://craftcms.
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
 | latest | master | 2.6.2980 | MariaDB 10.1.22 | Redis 3.2.8 |
-| craft3beta | craft3beta |craft 3 beta 17 | PostgreSQL 9.6.2 | Memcached 1.4.36 |
+| craft3beta | craft3beta |craft 3 beta 18 | PostgreSQL 9.6.2 | Memcached 1.4.36 |
 
 Features:
 

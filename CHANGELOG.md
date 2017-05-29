@@ -1,3 +1,7 @@
+## [0.1.3] - 29-05-2017
+### Update
+- Postgres update to 9.6.3
+
 ## [0.1.3] - 20-05-2017
 ### Update
 - Upgrade Craft to 3.0.0-beta.18

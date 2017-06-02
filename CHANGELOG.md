@@ -1,3 +1,7 @@
+## [0.1.5] - 02-06-2017
+### Update
+- Upgrade Craft to 2.6.2981
+
 ## [0.1.4] - 29-05-2017
 ### Update
 - MariaDB update to 10.1.23

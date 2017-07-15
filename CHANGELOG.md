@@ -1,3 +1,7 @@
+## [0.1.7] - 15-07-2017
+### Update
+- Upgrade Craft to 3.0.0-beta.22
+
 ## [0.1.6] - 10-07-2017
 ### Update
 - Upgrade Craft to 3.0.0-beta.21

@@ -1,3 +1,7 @@
+## [0.1.8] - 15-07-2017
+### Update
+- Update .env.sample; fixes postgres port not assigned error (https://github.com/wyveo/craftcms-docker/issues/5)
+
 ## [0.1.7] - 15-07-2017
 ### Update
 - Upgrade Craft to 3.0.0-beta.22

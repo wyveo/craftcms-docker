@@ -1,6 +1,6 @@
 ## [0.1.8] - 15-07-2017
 ### Update
-- Update .env.sample; fixes postgres port not assigned error (https://github.com/wyveo/craftcms-docker/issues/5)
+- Update .env.sample
 
 ## [0.1.7] - 15-07-2017
 ### Update

@@ -36,4 +36,4 @@ services:
         - /var/lib/postgresql/data
 
     memcached:
-      image: memcached:1.4.39
+      image: memcached:1.5.0

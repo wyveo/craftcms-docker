@@ -1,3 +1,8 @@
+## [0.1.9] - 29-07-2017
+### Update
+- Upgrade Craft to 3.0.0-beta.23
+- Update memcached to 1.5.0
+
 ## [0.1.8] - 15-07-2017
 ### Update
 - Update .env.sample

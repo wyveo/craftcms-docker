@@ -1,3 +1,7 @@
+## [0.2.5] - 13-08-2017
+### Update
+- Upgrade Redis to 3.2.10
+
 ## [0.2.4] - 29-07-2017
 ### Update
 - Upgrade Craft to 2.6.2988

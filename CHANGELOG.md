@@ -1,3 +1,8 @@
+## [0.2.2] - 21-08-2017
+### Update
+- Upgrade Craft to 3.0.0-beta.25
+- Downgrade Composer to 1.4.3
+
 ## [0.2.1] - 16-08-2017
 ### Update
 - Upgrade Craft to 3.0.0-beta.24

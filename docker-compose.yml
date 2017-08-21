@@ -18,6 +18,7 @@ services:
         MEMCACHED_HOST: memcached
 
         # DB is linked
+        DB_DRIVER: pgsql
         DB_HOST: postgres
         DB_NAME: craft3beta
         DB_PORT: 5432

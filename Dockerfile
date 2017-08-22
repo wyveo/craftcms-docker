@@ -3,7 +3,7 @@ FROM wyveo/nginx-php-fpm:latest
 MAINTAINER Colin Wilson "colin@wyveo.com"
 
 # Composer - https://hub.docker.com/r/composer/composer/
-ENV COMPOSER_VERSION 1.4.3
+ENV COMPOSER_VERSION 1.5.1
 
 RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \

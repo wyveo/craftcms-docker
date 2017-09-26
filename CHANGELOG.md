@@ -1,3 +1,8 @@
+## [0.2.4] - 26-09-2017
+### Update
+- Upgrade Craft to 3.0.0-beta.28
+- Update Composer to 1.5.2
+
 ## [0.2.3] - 02-09-2017
 ### Update
 - Update memcached to 1.5.1

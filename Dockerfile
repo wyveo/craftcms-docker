@@ -18,8 +18,7 @@ ADD https://download.buildwithcraft.com/craft/$CRAFT_VERSION/$CRAFT_VERSION.$CRA
 
 # Extract craft to webroot & remove default template files
 RUN unzip -qqo /tmp/$CRAFT_ZIP 'craft/*' -d /usr/share/nginx/ && \
-    unzip -qqoj /tmp/$CRAFT_ZIP 'public/index.php' -d /usr/share/nginx/html && \
-    rm -rf /usr/share/nginx/craft/templates/*
+    unzip -qqoj /tmp/$CRAFT_ZIP 'public/index.php' -d /usr/share/nginx/html
 
 # Add default craft cms nginx config
 ADD ./default.conf /etc/nginx/conf.d/default.conf

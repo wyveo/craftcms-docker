@@ -1,3 +1,7 @@
+## [0.2.9] - 28-09-2017
+### Update
+- Reverse deletion of default install template
+
 ## [0.2.8] - 26-09-2017
 ### Update
 - Upgrade Craft to 2.6.2990

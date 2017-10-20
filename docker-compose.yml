@@ -19,11 +19,14 @@ services:
 
         # DB is linked
         DB_DRIVER: pgsql
-        DB_HOST: postgres
-        DB_NAME: craft3beta
-        DB_PORT: 5432
+        DB_SERVER: postgres
+        DB_DATABASE: craft3beta
+        DB_PASSWORD: secret
+        DB_SCHEMA: public
+        DB_PORT: '5432'
         DB_USER: craft3beta
-        DB_PASS: secret
+        LANG: C.UTF-8
+        MEMCACHED_HOST: memcached
 
     postgres:
       image: postgres:10.0

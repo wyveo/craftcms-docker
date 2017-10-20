@@ -1,3 +1,8 @@
+## [0.3.0] - 20-10-2017
+### Update
+- Upgrade Craft to 2.6.2993
+- Upgrade MariaDB to 10.2.9
+
 ## [0.2.9] - 28-09-2017
 ### Update
 - Reverse deletion of default install template
@@ -9,7 +14,7 @@
 
 ## [0.2.7] - 02-09-2017
 ### Update
-- Upgrade MariaDB to 10.2.28
+- Upgrade MariaDB to 10.1.28
 
 ## [0.2.6] - 16-08-2017
 ### Update
@@ -26,11 +31,11 @@
 ## [0.2.3] - 15-07-2017
 ### Update
 - Upgrade Craft to 2.6.2987
-- Upgrade MariaDB to 10.2.27
+- Upgrade MariaDB to 10.1.27
 
 ## [0.2.2] - 11-07-2017
 ### Update
-- Upgrade MariaDB to 10.2.26
+- Upgrade MariaDB to 10.1.26
 
 ## [0.2.1] - 30-06-2017
 ### Update

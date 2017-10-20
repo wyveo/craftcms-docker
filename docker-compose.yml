@@ -26,7 +26,7 @@ services:
         DB_PASS: secret
 
     postgres:
-      image: postgres:9.6.5
+      image: postgres:10.0
       environment:
         POSTGRES_USER: craft3beta
         POSTGRES_PASSWORD: secret
@@ -37,4 +37,4 @@ services:
         - /var/lib/postgresql/data
 
     memcached:
-      image: memcached:1.5.1
+      image: memcached:1.5.2

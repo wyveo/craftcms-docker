@@ -1,3 +1,8 @@
+## [0.2.6] - 20-10-2017
+### Update
+- Update memcached to 1.5.2
+- Upgrade PostgreSQL to 10.0
+
 ## [0.2.5] - 01-10-2017
 ### Update
 - Upgrade Craft to 3.0.0-beta.29

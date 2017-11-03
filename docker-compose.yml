@@ -23,7 +23,7 @@ web:
     DB_PASS: secret
 
 mariadb:
-  image: mariadb:10.2.9
+  image: mariadb:10.2.10
   environment:
     MYSQL_ROOT_PASSWORD: root
     MYSQL_USER: craft

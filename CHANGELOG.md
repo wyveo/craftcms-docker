@@ -1,3 +1,7 @@
+## [0.2.7] - 03-11-2017
+### Update
+- Upgrade Craft to 3.0.0-beta.30
+
 ## [0.2.6] - 20-10-2017
 ### Update
 - Update memcached to 1.5.2

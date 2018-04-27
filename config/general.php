@@ -25,6 +25,6 @@ return [
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => false,
 
-    // The caching method that Craft should use.
-    'cacheMethod' => 'memcache',
+    // The secure key Craft will use for hashing and encrypting data
+    'securityKey' => getenv('SECURITY_KEY'),
 ];

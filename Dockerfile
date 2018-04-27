@@ -1,4 +1,4 @@
-FROM wyveo/nginx-php-fpm:latest
+FROM wyveo/nginx-php-fpm:php71
 
 MAINTAINER Colin Wilson "colin@wyveo.com"
 

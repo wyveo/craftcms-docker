@@ -4,12 +4,12 @@ This is a  [Craft CMS](https://craftcms.com/) / [Craft 3 Beta](https://craftcms.
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | master | 2.6.2994 | MariaDB 10.2.10 | Redis 3.2.11 |
-| craft3beta | craft3beta | 3.0.0-beta.30 | PostgreSQL 10.0 | Memcached 1.5.2 |
+| latest | master | 2.6.3015 | MariaDB 10.3.6 | Redis 4.0.9 |
+| craft3 | craft3 | 3.0.4 | PostgreSQL 10.3 | Redis 4.0.9 |
 
 Features:
 
- - Nginx 1.13.x, PHP-FPM 7.1.x, Git 2.11.0
+ - Nginx 1.13.x, PHP-FPM 7.2.x, Git 2.11.0
  - imageMagick image manipulation library
 
 ## Clone repo and run
@@ -23,9 +23,9 @@ $ sudo docker-compose up -d
 
 navigate to `http://<HOSTNAME>/admin` to begin installing Craft.
 
-#### Craft 3 Beta - [![version craft3beta](https://img.shields.io/badge/version-craft3beta-blue.svg)](https://craftcms.com/3) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft3beta.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft3beta "Get your own image badge on microbadger.com")
+#### Craft 3 - [![version craft3](https://img.shields.io/badge/version-craft3-blue.svg)](https://craftcms.com/3) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft3.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft3 "Get your own image badge on microbadger.com")
 ```
-$ git clone -b craft3beta --single-branch https://github.com/wyveo/craftcms-docker.git
+$ git clone -b craft3 --single-branch https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker
 $ sudo docker-compose up -d
 ```

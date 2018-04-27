@@ -23,7 +23,7 @@ web:
     DB_PASS: secret
 
 mariadb:
-  image: mariadb:10.2.10
+  image: mariadb:10.3.6
   environment:
     MYSQL_ROOT_PASSWORD: root
     MYSQL_USER: craft
@@ -34,6 +34,6 @@ mariadb:
     - /var/lib/mysql
 
 redis:
-  image: redis:3.2.11-alpine
+  image: redis:4.0.9-alpine
   volumes:
     - /data:/data

@@ -1,3 +1,9 @@
+## [0.3.2] - 27-04-2018
+### Update
+- Upgrade Craft to 2.6.3015
+- Upgrade MariaDB to 10.3.6
+- Upgrade Redis to 4.0.9
+
 ## [0.3.1] - 03-11-2017
 ### Update
 - Upgrade Craft to 2.6.2994

@@ -1,3 +1,7 @@
+## [0.3.4] - 28-04-2018
+### Update
+- Updates to reflect branch renaming
+
 ## [0.3.3] - 27-04-2018
 ### Update
 - Switch to PHP 7.1 - Craft 2 does not support PHP 7.2 (https://docs.craftcms.com/v2/requirements.html)

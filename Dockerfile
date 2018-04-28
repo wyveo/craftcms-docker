@@ -2,7 +2,7 @@ FROM wyveo/nginx-php-fpm:latest
 
 MAINTAINER Colin Wilson "colin@wyveo.com"
 
-# Remove existing webroot & configure PHP session handler for Redis
+# Remove existing webroot, configure PHP session handler for Redis, install postgresql-client (pg_dump)
 RUN rm -rf /usr/share/nginx/* && \
 sed -i -e "s/memory_limit\s*=\s*.*/memory_limit = 256M/g" ${php_conf} && \
 sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = redis/g" ${php_conf} && \

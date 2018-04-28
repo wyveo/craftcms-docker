@@ -1,3 +1,7 @@
+## [0.0.4] - 28-04-2018
+### Update
+- Updates to reflect branch renaming
+
 ## [0.0.3] - 28-04-2018
 ### Update
 - Support for Database Backup

@@ -1,7 +1,7 @@
 version: '2'
 services:
     web:
-      image: wyveo/craftcms-docker:craft3
+      image: wyveo/craftcms-docker:latest
       ports:
         - 80:80
       volumes:

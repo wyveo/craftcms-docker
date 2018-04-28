@@ -22,6 +22,7 @@ services:
         DB_SERVER: postgres
         DB_DATABASE: craft3
         DB_PASSWORD: secret
+        PGPASSWORD: secret
         DB_SCHEMA: public
         DB_PORT: '5432'
         DB_USER: craft3

@@ -1,5 +1,9 @@
+## [0.0.3] - 28-04-2018
+### Update
+- Support for Database Backup
+
 ## [0.0.2] - 27-04-2018
-### Initial commit
+### Update
 - README Update
 
 ## [0.0.1] - 27-04-2018

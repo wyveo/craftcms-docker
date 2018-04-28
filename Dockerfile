@@ -6,7 +6,11 @@ MAINTAINER Colin Wilson "colin@wyveo.com"
 RUN rm -rf /usr/share/nginx/* && \
 sed -i -e "s/memory_limit\s*=\s*.*/memory_limit = 256M/g" ${php_conf} && \
 sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = redis/g" ${php_conf} && \
-sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \"\${REDIS_PORT_6379_TCP}\"/g" ${php_conf}
+sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \"\${REDIS_PORT_6379_TCP}\"/g" ${php_conf} && \
+wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
+apt-get update && \
+apt-get install -y postgresql-client-10
 
 # Create Craft project
 RUN composer create-project craftcms/craft /usr/share/nginx/

@@ -1,3 +1,7 @@
+## [0.0.5] - 07-05-2018
+### Update
+- Update Craft to 3.0.5
+
 ## [0.0.4] - 28-04-2018
 ### Update
 - Updates to reflect branch renaming

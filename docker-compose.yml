@@ -1,11 +1,18 @@
 version: '2'
+
+volumes:
+  craftcms-data:
+  postgresql-data:
+  craftcms-logs:
+  
 services:
     web:
       image: wyveo/craftcms-docker:latest
       ports:
         - 80:80
       volumes:
-        - /var/log
+        - craftcms-logs:/var/log
+        - craftcms-data:/usr/share/nginx
       links:
         - postgres
         - redis
@@ -37,7 +44,7 @@ services:
         POSTGRES_INITDB_ARGS: "-E UTF8"
       volumes:
         # Persistent data
-        - /var/lib/postgresql/data
+        - postgresql-data:/var/lib/postgresql/data
 
     redis:
       image: redis:4.0.9-alpine

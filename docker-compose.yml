@@ -4,7 +4,7 @@ volumes:
   craftcms-data:
   postgresql-data:
   craftcms-logs:
-  
+
 services:
     web:
       image: wyveo/craftcms-docker:latest
@@ -36,7 +36,7 @@ services:
         LANG: C.UTF-8
 
     postgres:
-      image: postgres:10.3
+      image: postgres:10.4
       environment:
         POSTGRES_USER: craft3
         POSTGRES_PASSWORD: secret

@@ -1,3 +1,7 @@
+## [0.3.5] - 16-05-2018
+### Update
+- Upgrade Craft to [2.6.3016](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v2.md)
+
 ## [0.3.4] - 28-04-2018
 ### Update
 - Updates to reflect branch renaming

@@ -1,11 +1,11 @@
 [![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-%20wyveo%2Fcraftcms--docker-blue.svg)](https://hub.docker.com/r/wyveo/craftcms-docker/) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Introduction
-This is a  [Craft 3](https://craftcms.com/3) / [Craft CMS](https://craftcms.com/) base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
+This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | craft3 | 3.0.4 | PostgreSQL 10.3 | Redis 4.0.9 |
-| craft2 | craft2 | 2.6.3015 | MariaDB 10.3.6 | Redis 4.0.9 |
+| latest | craft3 | 3.0.8 | PostgreSQL 10.4 | Redis 4.0.9 |
+| craft2 | craft2 | 2.6.3016 | MariaDB 10.3.6 | Redis 4.0.9 |
 
 Features:
 

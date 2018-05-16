@@ -1,39 +1,48 @@
-web:
-  image: wyveo/craftcms-docker:craft2
-  ports:
-    - 80:80
-  volumes:
-    - /var/log
-  links:
-    - mariadb
-    - redis
-  # env vars are replaced in /craft/config
-  environment:
-    # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
-    LANG: C.UTF-8
+version: '2'
 
-    # REDIS is linked
-    REDIS_HOST: redis
+volumes:
+  craftcms-data:
+  mariadb-data:
+  craftcms-logs:
 
-    # DB is linked
-    DB_HOST: mariadb
-    DB_NAME: craft
-    DB_PORT: 3306
-    DB_USER: craft
-    DB_PASS: secret
+services:
+  web:
+    image: wyveo/craftcms-docker:craft2
+    ports:
+      - 80:80
+    volumes:
+      - craftcms-logs:/var/log
+      - craftcms-data:/usr/share/nginx
+    links:
+      - mariadb
+      - redis
+    # env vars are replaced in /craft/config
+    environment:
+      # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
+      LANG: C.UTF-8
 
-mariadb:
-  image: mariadb:10.3.6
-  environment:
-    MYSQL_ROOT_PASSWORD: root
-    MYSQL_USER: craft
-    MYSQL_PASSWORD: secret
-    MYSQL_DATABASE: craft
-  volumes:
-    # Persistent data
-    - /var/lib/mysql
+      # REDIS is linked
+      REDIS_HOST: redis
 
-redis:
-  image: redis:4.0.9-alpine
-  volumes:
-    - /data:/data
+      # DB is linked
+      DB_HOST: mariadb
+      DB_NAME: craft
+      DB_PORT: 3306
+      DB_USER: craft
+      DB_PASS: secret
+
+  mariadb:
+    image: mariadb:10.3.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: craft
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: craft
+    volumes:
+      # Persistent data
+      - mariadb-data:/var/lib/mysql/data
+
+  redis:
+    image: redis:4.0.9-alpine
+    volumes:
+      - /data:/data

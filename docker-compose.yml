@@ -7,6 +7,7 @@ volumes:
 
 services:
     web:
+      container_name: craftcmsdocker_web_1
       image: wyveo/craftcms-docker:latest
       ports:
         - 80:80
@@ -36,6 +37,7 @@ services:
         LANG: C.UTF-8
 
     postgres:
+      container_name: craftcmsdocker_postgres_1
       image: postgres:10.4
       environment:
         POSTGRES_USER: craft3
@@ -47,6 +49,7 @@ services:
         - postgresql-data:/var/lib/postgresql/data
 
     redis:
+      container_name: craftcmsdocker_redis_1
       image: redis:4.0.9-alpine
       volumes:
         - /data:/data

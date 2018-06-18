@@ -50,6 +50,6 @@ services:
 
     redis:
       container_name: craftcmsdocker_redis_1
-      image: redis:4.0.9-alpine
+      image: redis:4.0.10-alpine
       volumes:
         - /data:/data

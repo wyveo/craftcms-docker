@@ -1,3 +1,8 @@
+## [0.1.1] - 18-06-2018
+### Update
+- Update Craft to 3.0.11
+- Redis update to 4.0.10 (critical security fix)
+
 ## [0.1.0] - 08-06-2018
 ### Update
 - Update Craft to 3.0.10.3

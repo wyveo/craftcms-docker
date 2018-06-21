@@ -1,6 +1,6 @@
 FROM wyveo/nginx-php-fpm:latest
 
-MAINTAINER Colin Wilson "colin@wyveo.com"
+MAINTAINER Ted Kuo "ted@grana.com"
 
 # Remove existing webroot, configure PHP session handler for Redis, install postgresql-client (pg_dump)
 RUN rm -rf /usr/share/nginx/* && \
@@ -10,10 +10,10 @@ sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \"\${REDIS_PORT_637
 wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
 apt-get update && \
-apt-get install -y postgresql-client-10
+apt-get install -y postgresql-client-10 vim
 
-# Create Craft project
-RUN composer create-project craftcms/craft /usr/share/nginx/
+# Checkout from the existing GRANA/cms github repo
+RUN composer create-project craftcms/cms /usr/share/nginx/
 
 # Install the yii2-redis library
 RUN composer require --prefer-dist yiisoft/yii2-redis -d /usr/share/nginx/

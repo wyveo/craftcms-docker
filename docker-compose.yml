@@ -7,7 +7,7 @@ volumes:
 
 services:
     web:
-      image: wyveo/craftcms-docker:latest
+      image: grana/craftcms-docker:latest
       ports:
         - 80:80
       volumes:
@@ -23,6 +23,7 @@ services:
 
         # REDIS is linked
         REDIS_HOST: redis
+        REDIS_PORT_6379_TCP: tcp://redis:6379
 
         # DB is linked
         DB_DRIVER: pgsql
@@ -49,4 +50,4 @@ services:
     redis:
       image: redis:4.0.10-alpine
       volumes:
-        - /data:/data
+        - /tmp/redis:/data

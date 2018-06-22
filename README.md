@@ -25,7 +25,7 @@ Navigate to `http://localhost/` to begin.
 ## Edit CraftCMS files
 You can edit the files in your local repo directly, they will be automatically sync'ed into docker container. 
 
-## Features - what this project is reference from.
+## Acknowledgements - what this project is reference from.
  - [Craft 3 Docker](https://github.com/wyveo/craftcms-docker)
  - [Craft 3](https://craftcms.com/3)
  - base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/)

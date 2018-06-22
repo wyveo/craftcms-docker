@@ -1,60 +1,33 @@
-[![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-%20wyveo%2Fcraftcms--docker-blue.svg)](https://hub.docker.com/r/wyveo/craftcms-docker/) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Introduction
-This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
-#### Versioning
-| Docker Tag | Git Branch | Craft Release | Database | Caching |
-|-----|-------|-----|--------|--------|
-| latest | craft3 | 3.0.12 | PostgreSQL 10.4 | Redis 4.0.10 |
-| craft2 | craft2 | 2.6.3017 | MariaDB 10.3.7 | Redis 4.0.10 |
-
-Features:
-
- - Nginx 1.15.x, PHP-FPM 7.2.x / 7.1.x, Git 2.11.0
- - imageMagick image manipulation library
+This repo contains instrumentation to automate the creation of a GRANA customised [CMS](https://github.com/GRANA/cms) development environment.
+ 
+## Pre-requisites
+Before you start, please ensure `docker-sync` and `docker` are installed in your local env.
+- [docker-sync](http://docker-sync.io/)
+- [docker community edition](https://www.docker.com/community-edition)
 
 ## Clone repo and run
-To run, clone the git repo and run `docker-compose up`:
-#### Craft 3 - [![version craft3](https://img.shields.io/badge/version-craft3-blue.svg)](https://craftcms.com/3) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft3.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft3 "Get your own image badge on microbadger.com")
+Clone the git repo [CMS](https://github.com/GRANA/cms) to `~/grana-cms` path. `~/grana-cms` path must not be changed, as docker-sync depends on this path.
 ```
-$ git clone https://github.com/wyveo/craftcms-docker.git
+$ git clone https://github.com/GRANA/cms.git ~/grana-cms/
+```
+
+To run, clone this git repo and run `docker-sync-stack up`.
+```
+$ git clone https://github.com/grana/craftcms-docker.git
 $ cd craftcms-docker
-$ sudo docker-compose up -d
+$ sudo docker-sync-stack start
 ```
-navigate to `http://<HOSTNAME>/index.php?p=admin` to begin installing Craft 3.
+Under the hood, `docker-sync-stack up` starts a new volume to sync your local git repo into the `cms` container, and then calls `docker-compose up` to instrument creation of the `cms`, `redis`, `mysql` containers to host the dev environment.
 
-#### Craft 2 - [![version craft2](https://img.shields.io/badge/version-craft2-blue.svg)](https://craftcms.com) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft2.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft2 "Get your own image badge on microbadger.com")
-```
-$ git clone -b craft2 --single-branch https://github.com/wyveo/craftcms-docker.git
-$ cd craftcms-docker
-$ sudo docker-compose up -d
-```
-navigate to `http://<HOSTNAME>/admin` to begin installing Craft 2.
+Navigate to `http://localhost/` to begin.
 
+## Edit CraftCMS files
+You can edit the files in your local repo directly, they will be automatically sync'ed into docker container. 
 
-## Editing CraftCMS files
-You can access the CraftCMS volume by going to the physical location of the `craftcmsdocker_craftcms-data` volume.
-
-```shell
-$ docker volume ls
-DRIVER     VOLUME NAME
-local      craftcmsdocker_craftcms-data
-local      craftcmsdocker_craftcms-logs
-local      craftcmsdocker_postgresql-data
-
-$ docker volume inspect craftcmsdocker_craftcms-data
-[
-  {
-    "CreatedAt": "2018-05-17T11:35:52+02:00",
-    "Driver": "local",
-    "Labels": null,
-    "Mountpoint": "/var/lib/docker/volumes/craftcmsdocker_craftcms-data/_data"
-    "Name": "craftcmsdocker_craftcms-data",
-    "Options": {},
-    "Scope": "local"
-  }
-]
-
-$ cd /var/lib/docker/volumes/craftcmsdocker_craftcms-data/_data
-```
-
-This directory is where the CraftCMS files live, and where you can edit/update/backup whatever you need.
+## Features - what this project is reference from.
+ - [Craft 3 Docker](https://github.com/wyveo/craftcms-docker)
+ - [Craft 3](https://craftcms.com/3)
+ - base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/)
+ - Nginx 1.15.x, PHP-FPM 7.2.x / 7.1.x, Git 2.11.0
+ - imageMagick image manipulation library

@@ -1,0 +1,13 @@
+# This file gets copied to docker-sync.yml on setup. DO NOT modify docker-sync.yml directly, but this one.
+version: "2"
+options:
+  verbose: true
+syncs:
+  craftcms-data:
+    src: '/Users/tedkuo/cms/'
+    sync_host_ip: 'auto'
+    sync_host_port: 10874
+    sync_strategy: 'rsync'
+    sync_user: 'nginx'
+    sync_userid: '101'
+    sync_args: '-v --copy-links --hard-links'

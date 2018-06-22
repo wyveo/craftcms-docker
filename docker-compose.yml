@@ -1,13 +1,18 @@
+# Instrumentation for a GRANA cms development environment.
 version: '2'
 
+# Create the following volumes for storage of code + data (including logs) separately from the containers (machine definitions)
 volumes:
+  # craftcms-data is initialised in docker-sync.yml. This volume must be started first before Docker-compose.
   craftcms-data:
+    external: true
   mysql-data:
   craftcms-logs:
 
 services:
     web:
       image: grana/craftcms-docker:latest
+      container_name: cms
       ports:
         - 80:80
       volumes:
@@ -37,6 +42,7 @@ services:
 
     mysql:
       image: mysql:5.7
+      container_name: cms_db
       environment:
         MYSQL_USER: craft3
         MYSQL_PASSWORD: secret
@@ -48,5 +54,6 @@ services:
 
     redis:
       image: redis:4.0.10-alpine
+      container_name: cms_redis
       volumes:
         - /tmp/redis:/data

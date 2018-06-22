@@ -4,10 +4,11 @@ options:
   verbose: true
 syncs:
   craftcms-data:
-    src: '/Users/tedkuo/cms/'
+    # Path is hard-coded based on the assumption in README.md, where all git clone for GRANA/cms are placed under `~/grana-cms` folder.
+    src: '~/grana-cms/'
     sync_host_ip: 'auto'
-    sync_host_port: 10874
     sync_strategy: 'rsync'
+    sync_host_port: 10874
     sync_user: 'nginx'
     sync_userid: '101'
     sync_args: '-v --copy-links --hard-links'

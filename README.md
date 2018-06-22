@@ -1,5 +1,5 @@
 ## Introduction
-This repo contains instrumentation to automate the creation of a GRANA customised [CMS]() development environment. 
+This repo contains instrumentation to automate the creation of a GRANA customised [CMS](https://github.com/GRANA/cms) development environment.
  
 ## Pre-requisites
 Before you start, please ensure `docker-sync` and `docker` are installed in your local env.
@@ -7,11 +7,16 @@ Before you start, please ensure `docker-sync` and `docker` are installed in your
 - [docker community edition](https://www.docker.com/community-edition)
 
 ## Clone repo and run
-To run, clone the git repo and run `docker-sync-stack up`.  
+Clone the git repo [CMS](https://github.com/GRANA/cms) to `~/grana-cms` path. `~/grana-cms` path must not be changed, as docker-sync depends on this path.
+```
+$ git clone https://github.com/GRANA/cms.git ~/grana-cms/
+```
+
+To run, clone this git repo and run `docker-sync-stack up`.
 ```
 $ git clone https://github.com/grana/craftcms-docker.git
 $ cd craftcms-docker
-$ sudo docker-sync-stack start 
+$ sudo docker-sync-stack start
 ```
 Under the hood, `docker-sync-stack up` starts a new volume to sync your local git repo into the `cms` container, and then calls `docker-compose up` to instrument creation of the `cms`, `redis`, `mysql` containers to host the dev environment.
 

@@ -17,7 +17,7 @@ services:
         - 80:80
       volumes:
         - craftcms-logs:/var/log
-        - craftcms-data:/usr/share/nginx
+        - craftcms-data:/usr/share/nginx:nocopy
       links:
         - mysql
         - redis
@@ -30,11 +30,16 @@ services:
         REDIS_HOST: redis
         REDIS_PORT_6379_TCP: tcp://redis:6379
 
+        # CRAFT specific environments
+        CRAFT_ENVIRONMENT: "production"
+        SECURITY_KEY: "random_generated_key" # The secure key Craft will use for hashing and encrypting data (generate/update using ./craft setup/security-key)
+
         # DB is linked
         DB_DRIVER: mysql
         DB_SERVER: mysql
         DB_DATABASE: craft3
         DB_PASSWORD: secret
+        DB_TABLE_PREFIX: "cr_"
         DB_SCHEMA: public
         DB_PORT: '3306'
         DB_USER: craft3

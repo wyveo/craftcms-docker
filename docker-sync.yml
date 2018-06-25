@@ -13,4 +13,5 @@ syncs:
     sync_userid: '101'
     sync_prefer: 'default'
     monit_enable: true
+    sync_excludes: ['.git', '.env', '.DS_Store'] # do not sync git over, nor any environment information that would've been provided by docker container.
     watch_args: '-v'

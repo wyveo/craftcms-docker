@@ -35,9 +35,6 @@ RUN composer require --prefer-dist yiisoft/yii2-redis -d /usr/share/nginx/
 # Add default craft cms nginx config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
 
-# Add database environment
-ADD .env.dev /usr/share/nginx/.env
-
 # Add default config
 ADD ./config /usr/share/nginx/config
 

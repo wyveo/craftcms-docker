@@ -10,7 +10,7 @@ syncs:
     sync_host_ip: 'auto'
     sync_strategy: 'native_osx'
     sync_host_port: 10874
-    sync_userid: '0'
+    sync_userid: '101'
     sync_prefer: 'default'
     monit_enable: true
     watch_args: '-v'

@@ -19,6 +19,7 @@ $ cd craftcms-docker
 $ sudo docker-sync-stack start
 ```
 Under the hood, `docker-sync-stack up` starts a new volume to sync your local git repo into the `cms` container, and then calls `docker-compose up` to instrument creation of the `cms`, `redis`, `mysql` containers to host the dev environment.
+All three dockers runs in the foreground with logs printed on screen. Docker-sync runs in the mode to show every file sync. Keep the tab open, it helps you to debug issues if there was any.
 
 Navigate to `http://localhost/admin/install` to begin.
 

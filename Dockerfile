@@ -12,15 +12,22 @@ apt-get install -y vim zsh && \
 # Install oh-my-zsh for easier development for developers. Force true in return code, because it sometimes returns non-zero code unnecessarily
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" || true
 
+
 ENV NODE_VERSION 9.8.0
 ENV NVM_DIR /usr/local/nvm
 RUN apt install -y build-essential libssl-dev \
+    # install ruby, and all necessary dependencies required by gulp commands
+    && apt-get install -y ruby ruby-dev && gem install rake scss-lint \
     && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash \
+    # install nvm, npm, and all the fundamental binaries required for development, bower + gulp
     && chmod a+x $NVM_DIR/nvm.sh \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm use --delete-prefix v$NODE_VERSION \
-    && echo '{"allow_root":true }' > $HOME/.bowerrc
+    && echo '{"allow_root":true }' > $HOME/.bowerrc \
+    && npm install --global gulp-cli \
+    && npm install --global bower \
+    && npm install --save-dev gulp@next
 ENV PATH $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 
 # Clone from the existing GRANA/cms github repo, and install it under /usr/share/nginx

@@ -6,6 +6,7 @@ volumes:
   # craftcms-data is initialised in docker-sync.yml. This volume must be started first before Docker-compose.
   craftcms-data:
     external: true
+  craftcms-config:
   mysql-data:
   craftcms-logs:
 
@@ -18,6 +19,8 @@ services:
       volumes:
         - craftcms-logs:/var/log
         - craftcms-data:/usr/share/nginx:nocopy
+        # Create a separate config volume to ensure app.web.php & general.php is served by docker, and rest by git repo.
+        - craftcms-config:/usr/share/nginx/config
       links:
         - mysql
         - redis
@@ -45,7 +48,7 @@ services:
         DB_USER: craft3
         LANG: C.UTF-8
       # Changing the command to trigger /start.sh to start nginx, php-fpm and other servers, and then install the dependencies as specified by code.
-      command: /start.sh && /usr/local/bin/install_dep.sh
+      command: bash -c "/usr/local/bin/install_dep.sh && /start.sh"
 
     mysql:
       image: mysql:5.7

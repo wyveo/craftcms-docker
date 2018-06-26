@@ -1,20 +1,28 @@
+# Instrumentation for a GRANA cms development environment. THIS SHALL NEVER BE USED FOR PRODUCTION.
 version: '2'
 
+# Create the following volumes for storage of code + data (including logs) separately from the containers (machine definitions)
 volumes:
+  # craftcms-data is initialised in docker-sync.yml. This volume must be started first before Docker-compose.
   craftcms-data:
-  postgresql-data:
+    external: true
+  craftcms-config:
+  mysql-data:
   craftcms-logs:
 
 services:
     web:
-      image: wyveo/craftcms-docker:latest
+      image: grana/craftcms-docker:latest
+      container_name: cms
       ports:
         - 80:80
       volumes:
         - craftcms-logs:/var/log
-        - craftcms-data:/usr/share/nginx
+        - craftcms-data:/usr/share/nginx:nocopy
+        # Create a separate config volume to ensure app.web.php & general.php is served by docker, and rest by git repo.
+        - craftcms-config:/usr/share/nginx/config
       links:
-        - postgres
+        - mysql
         - redis
       # env vars are replaced in .env
       environment:
@@ -23,30 +31,39 @@ services:
 
         # REDIS is linked
         REDIS_HOST: redis
+        REDIS_PORT_6379_TCP: tcp://redis:6379
+
+        # CRAFT specific environments
+        CRAFT_ENVIRONMENT: "production"
+        SECURITY_KEY: "2EALRdRDYmRr5cbAD5wxRVdCeZ4qEHgCCzmZZYdjfuXqmSpXW5tN83byEm3" # The secure key Craft will use for hashing and encrypting data (generate/update using ./craft setup/security-key)
 
         # DB is linked
-        DB_DRIVER: pgsql
-        DB_SERVER: postgres
+        DB_DRIVER: mysql
+        DB_SERVER: mysql
         DB_DATABASE: craft3
         DB_PASSWORD: secret
-        PGPASSWORD: secret
+        DB_TABLE_PREFIX: "cr_"
         DB_SCHEMA: public
-        DB_PORT: '5432'
+        DB_PORT: '3306'
         DB_USER: craft3
         LANG: C.UTF-8
+      # Changing the command to trigger /start.sh to start nginx, php-fpm and other servers, and then install the dependencies as specified by code.
+      command: bash -c "/usr/local/bin/install_dep.sh && /start.sh"
 
-    postgres:
-      image: postgres:10.4
+    mysql:
+      image: mysql:5.7
+      container_name: cms_db
       environment:
-        POSTGRES_USER: craft3
-        POSTGRES_PASSWORD: secret
-        POSTGRES_DB: craft3
-        POSTGRES_INITDB_ARGS: "-E UTF8"
+        MYSQL_USER: craft3
+        MYSQL_PASSWORD: secret
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: craft3
       volumes:
         # Persistent data
-        - postgresql-data:/var/lib/postgresql/data
+        - mysql-data:/var/lib/mysql
 
     redis:
       image: redis:4.0.10-alpine
+      container_name: cms_redis
       volumes:
-        - /data:/data
+        - /tmp/redis:/data

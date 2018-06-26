@@ -1,0 +1,17 @@
+# This file gets copied to docker-sync.yml on setup. DO NOT modify docker-sync.yml directly, but this one.
+version: "2"
+options:
+  verbose: true
+syncs:
+  craftcms-data:
+    # Path is hard-coded based on the assumption in README.md, where all git clone for GRANA/cms are placed under `~/grana-cms` folder.
+    src: '~/grana-cms/'
+    notify_terminal: true
+    sync_host_ip: 'auto'
+    sync_strategy: 'native_osx'
+    sync_host_port: 10874
+    sync_userid: '101'
+    sync_prefer: 'default'
+    monit_enable: true
+    sync_excludes: ['.git', '.env', '.DS_Store', 'vendor'] # do not sync git over, nor any environment information that would've been provided by docker container.
+    watch_args: '-v'

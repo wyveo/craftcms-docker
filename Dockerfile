@@ -38,6 +38,8 @@ ADD ./default.conf /etc/nginx/conf.d/default.conf
 # Add default config
 ADD ./config /usr/share/nginx/config
 
+ADD ./bin/install_dep.sh /usr/local/bin/install_dep.sh
+
 # Change owner to nginx to ensure web server has write access to all the files.
 RUN chown -Rf nginx:nginx /usr/share/nginx/
 

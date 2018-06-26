@@ -12,16 +12,17 @@ Clone the git repo [CMS](https://github.com/GRANA/cms) to `~/grana-cms` path. `~
 $ git clone https://github.com/GRANA/cms.git ~/grana-cms/
 ```
 
-To run, clone this git repo and run `docker-sync-stack up`.
+To run, clone this git repo and run the following:
 ```
 $ git clone https://github.com/grana/craftcms-docker.git
-$ cd craftcms-docker
-$ sudo docker-sync-stack start
+$ cd craftcms-docker && sudo docker-sync-stack start
 ```
 Under the hood, `docker-sync-stack up` starts a new volume to sync your local git repo into the `cms` container, and then calls `docker-compose up` to instrument creation of the `cms`, `redis`, `mysql` containers to host the dev environment.
 All three dockers runs in the foreground with logs printed on screen. Docker-sync runs in the mode to show every file sync. Keep the tab open, it helps you to debug issues if there was any.
 
-Navigate to `http://localhost/admin/install` to begin.
+Now, code + environment are setup and running, navigate to `http://localhost/admin/install` to begin installation.
+
+After the installation, it gives you a fresh setup :seedling:. Run `craft migrate/up` in `cms` docker to upgrade to get the latest customisations.
 
 ## Edit CraftCMS files
 You can edit the files in your local repo directly, they will be automatically sync'ed into docker container. 

@@ -1,4 +1,4 @@
-# Instrumentation for a GRANA cms development environment.
+# Instrumentation for a GRANA cms development environment. THIS SHALL NEVER BE USED FOR PRODUCTION.
 version: '2'
 
 # Create the following volumes for storage of code + data (including logs) separately from the containers (machine definitions)
@@ -32,7 +32,7 @@ services:
 
         # CRAFT specific environments
         CRAFT_ENVIRONMENT: "production"
-        SECURITY_KEY: "random_generated_key" # The secure key Craft will use for hashing and encrypting data (generate/update using ./craft setup/security-key)
+        SECURITY_KEY: "2EALRdRDYmRr5cbAD5wxRVdCeZ4qEHgCCzmZZYdjfuXqmSpXW5tN83byEm3" # The secure key Craft will use for hashing and encrypting data (generate/update using ./craft setup/security-key)
 
         # DB is linked
         DB_DRIVER: mysql
@@ -44,6 +44,8 @@ services:
         DB_PORT: '3306'
         DB_USER: craft3
         LANG: C.UTF-8
+      # Changing the command to trigger /start.sh to start nginx, php-fpm and other servers, and then install the dependencies as specified by code.
+      command: /start.sh && /usr/local/bin/install_dep.sh
 
     mysql:
       image: mysql:5.7

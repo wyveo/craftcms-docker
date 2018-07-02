@@ -3,7 +3,7 @@ FROM wyveo/nginx-php-fpm:php71
 MAINTAINER Colin Wilson "colin@wyveo.com"
 
 # Set craft cms version
-ENV CRAFT_VERSION=2.6 CRAFT_BUILD=3017
+ENV CRAFT_VERSION=2.6 CRAFT_BUILD=3019
 
 ENV CRAFT_ZIP=Craft-$CRAFT_VERSION.$CRAFT_BUILD.zip
 

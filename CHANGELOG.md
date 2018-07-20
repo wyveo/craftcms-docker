@@ -1,3 +1,7 @@
+## [0.1.5] - 20-07-2018
+### Update
+- Update Craft to 3.0.16.1
+
 ## [0.1.4] - 10-07-2018
 ### Update
 - Update Craft to 3.0.15

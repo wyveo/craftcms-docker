@@ -20,7 +20,7 @@ $ git clone https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker
 $ sudo docker-compose up -d
 ```
-navigate to `http://<HOSTNAME>/index.php?p=admin` to begin installing Craft 3.
+navigate to `http://<HOSTNAME>/admin/install` to begin installing Craft 3.
 
 #### Craft 2 - [![version craft2](https://img.shields.io/badge/version-craft2-blue.svg)](https://craftcms.com) [![](https://images.microbadger.com/badges/image/wyveo/craftcms-docker:craft2.svg)](https://microbadger.com/images/wyveo/craftcms-docker:craft2 "Get your own image badge on microbadger.com")
 ```

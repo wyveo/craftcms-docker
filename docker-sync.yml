@@ -15,3 +15,15 @@ syncs:
     monit_enable: true
     sync_excludes: ['.git', '.env', '.DS_Store', 'vendor'] # do not sync git over, nor any environment information that would've been provided by docker container.
     watch_args: '-v'
+
+  craftcms-config-redactor:
+    src: '~/grana-cms/config/redactor/'
+    notify_terminal: true
+    sync_host_ip: 'auto'
+    sync_strategy: 'native_osx'
+    sync_host_port: 10874
+    sync_userid: '101'
+    sync_prefer: 'default'
+    monit_enable: true
+    sync_excludes: ['.git', '.env', '.DS_Store', 'vendor'] # do not sync git over, nor any environment information that would've been provided by docker container.
+    watch_args: '-v'

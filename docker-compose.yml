@@ -9,6 +9,8 @@ volumes:
   craftcms-config:
   mysql-data:
   craftcms-logs:
+  craftcms-config-redactor:
+    external: true
 
 services:
     web:
@@ -21,6 +23,7 @@ services:
         - craftcms-data:/usr/share/nginx:nocopy
         # Create a separate config volume to ensure app.web.php & general.php is served by docker, and rest by git repo.
         - craftcms-config:/usr/share/nginx/config
+        - craftcms-config-redactor:/usr/share/nginx/config/redactor
       links:
         - mysql
         - redis

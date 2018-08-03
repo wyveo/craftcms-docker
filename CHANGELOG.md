@@ -1,3 +1,8 @@
+## [0.3.8] - 03-08-2018
+### Update
+- Upgrade Craft to [2.7.0](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)
+- Upgrade to PHP 7.2 - Craft 2 now supports PHP 7.2 (https://craftcms.com/news/craft-2-7)
+
 ## [0.3.7] - 20-07-2018
 ### Update
 - Upgrade MariaDB to [10.3.8](https://mariadb.com/kb/en/library/mariadb-1038-release-notes/)

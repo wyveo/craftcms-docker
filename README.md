@@ -4,12 +4,12 @@ This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) 
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | craft3 | 3.0.17.1 | PostgreSQL 10.4 | Redis 4.0.10 |
-| craft2 | craft2 | 2.6.3019 | MariaDB 10.3.8 | Redis 4.0.10 |
+| latest | craft3 | 3.0.18 | PostgreSQL 10.4 | Redis 4.0.10 |
+| craft2 | craft2 | 2.7.0 | MariaDB 10.3.8 | Redis 4.0.10 |
 
 Features:
 
- - Nginx 1.15.x, PHP-FPM 7.2.x / 7.1.x, Git 2.11.0
+ - Nginx 1.15.x, PHP-FPM 7.2.x, Git 2.11.0
  - imageMagick image manipulation library
 
 ## Clone repo and run

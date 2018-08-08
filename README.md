@@ -4,8 +4,8 @@ This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) 
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | craft3 | 3.0.18 | PostgreSQL 10.4 | Redis 4.0.10 |
-| craft2 | craft2 | 2.7.0 | MariaDB 10.3.8 | Redis 4.0.10 |
+| latest | craft3 | 3.0.19 | PostgreSQL 10.4 | Redis 4.0.11 |
+| craft2 | craft2 | 2.7.0 | MariaDB 10.3.8 | Redis 4.0.11 |
 
 Features:
 
@@ -30,3 +30,32 @@ $ cd craftcms-docker
 $ sudo docker-compose up -d
 ```
 navigate to `http://<HOSTNAME>/admin` to begin installing Craft 2.
+
+
+## Editing CraftCMS files
+You can access the CraftCMS volume by going to the physical location of the `craftcmsdocker_craftcms-data` volume.
+
+```shell
+$ docker volume ls
+DRIVER     VOLUME NAME
+local      craftcmsdocker_craftcms-data
+local      craftcmsdocker_craftcms-logs
+local      craftcmsdocker_postgresql-data
+
+$ docker volume inspect craftcmsdocker_craftcms-data
+[
+  {
+    "CreatedAt": "2018-05-17T11:35:52+02:00",
+    "Driver": "local",
+    "Labels": null,
+    "Mountpoint": "/var/lib/docker/volumes/craftcmsdocker_craftcms-data/_data"
+    "Name": "craftcmsdocker_craftcms-data",
+    "Options": {},
+    "Scope": "local"
+  }
+]
+
+$ cd /var/lib/docker/volumes/craftcmsdocker_craftcms-data/_data
+```
+
+This directory is where the CraftCMS files live, and where you can edit/update/backup whatever you need.

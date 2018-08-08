@@ -1,3 +1,8 @@
+## [0.1.8] - 08-08-2018
+### Update
+- Update Craft to [3.0.19](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Upgrade Redis to [4.0.11](https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES) (important bugs fixed)
+
 ## [0.1.7] - 03-08-2018
 ### Update
 - Update Craft to 3.0.18

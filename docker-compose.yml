@@ -36,7 +36,7 @@ services:
         LANG: C.UTF-8
 
     postgres:
-      image: postgres:10.4
+      image: postgres:10.5
       environment:
         POSTGRES_USER: craft3
         POSTGRES_PASSWORD: secret

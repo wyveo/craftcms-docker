@@ -1,3 +1,8 @@
+## [0.4.0] - 03-11-2018
+### Update
+- Upgrade Craft to [2.7.3](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)
+- Upgrade MariaDB to [10.3.10](https://mariadb.com/kb/en/library/mariadb-1038-release-notes/)
+
 ## [0.3.9] - 08-08-2018
 ### Update
 - Upgrade Redis to [4.0.11](https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES) (important bugs fixed)

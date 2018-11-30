@@ -1,3 +1,8 @@
+## [0.2.5] - 30-11-2018
+### Update
+- Update Craft to [3.0.33](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Update PostgreSQL to [10.6](https://www.postgresql.org/docs/10/static/release-10-6.html)
+
 ## [0.2.4] - 03-11-2018
 ### Update
 - Update Craft to [3.0.29](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

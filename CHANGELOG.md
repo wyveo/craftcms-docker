@@ -1,3 +1,8 @@
+## [0.4.1] - 30-11-2018
+### Update
+- Upgrade Craft to [2.7.4](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)
+- Upgrade MariaDB to [10.3.11](https://mariadb.com/kb/en/library/mariadb-1038-release-notes/)
+
 ## [0.4.0] - 03-11-2018
 ### Update
 - Upgrade Craft to [2.7.3](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)

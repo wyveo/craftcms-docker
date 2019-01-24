@@ -1,3 +1,9 @@
+## [0.2.6] - 24-01-2019
+### Update
+- Use Wyveo PHP-FPM 7.3 image [wyveo/nginx-php-fpm:php73](https://github.com/wyveo/nginx-php-fpm/tree/php73)
+- Update Craft to [3.1.3](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Upgrade Redis to [5.0.3](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
+
 ## [0.2.5] - 30-11-2018
 ### Update
 - Update Craft to [3.0.33](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

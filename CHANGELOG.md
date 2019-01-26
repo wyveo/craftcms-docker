@@ -1,3 +1,7 @@
+## [0.2.7] - 26-01-2019
+### Update
+- Update Craft to [3.1.5](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+
 ## [0.2.6] - 24-01-2019
 ### Update
 - Use Wyveo PHP-FPM 7.3 image [wyveo/nginx-php-fpm:php73](https://github.com/wyveo/nginx-php-fpm/tree/php73)

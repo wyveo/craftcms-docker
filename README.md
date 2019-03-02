@@ -4,7 +4,7 @@ This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) 
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | craft3 | 3.1.10 | PostgreSQL 10.6 | Redis 5.0.3 |
+| latest | craft3 | 3.1.15 | PostgreSQL 10.7 | Redis 5.0.3 |
 | craft2 | craft2 | 2.7.4 | MariaDB 10.4.1 | Redis 4.0.12 |
 
 Features:
@@ -14,7 +14,7 @@ Features:
 
 ## Clone repo and run
 To run, clone the git repo and run `docker-compose up`:
-#### Craft 3 - [![version craft3](https://img.shields.io/badge/version-Craft%203-red.svg?&style=for-the-badge)](https://craftcms.com/3) [![](https://img.shields.io/microbadger/image-size/wyveo/craftcms-docker/craft3.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker) [![](https://img.shields.io/microbadger/layers/wyveo/craftcms-docker/craft3.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker)
+#### [![version craft3](https://img.shields.io/badge/version-Craft%203-red.svg?&style=for-the-badge)](https://craftcms.com/3) [![](https://img.shields.io/microbadger/image-size/wyveo/craftcms-docker/craft3.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker) [![](https://img.shields.io/microbadger/layers/wyveo/craftcms-docker/craft3.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker)
 ```
 $ git clone https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker
@@ -23,7 +23,7 @@ $ sudo docker-compose up -d
 navigate to `http://<HOSTNAME>/index.php?p=admin` to begin installing Craft 3.
 NOTE: if the above url doesn't work, try navigating to `http://<HOSTNAME>/admin/install` instead.
 
-#### Craft 2 - [![version craft2](https://img.shields.io/badge/version-Craft%202-red.svg?&style=for-the-badge)](https://craftcms.com/2) [![](https://img.shields.io/microbadger/image-size/wyveo/craftcms-docker/craft2.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker) [![](https://img.shields.io/microbadger/layers/wyveo/craftcms-docker/craft2.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker)
+#### [![version craft2](https://img.shields.io/badge/version-Craft%202-red.svg?&style=for-the-badge)](https://craftcms.com/2) [![](https://img.shields.io/microbadger/image-size/wyveo/craftcms-docker/craft2.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker) [![](https://img.shields.io/microbadger/layers/wyveo/craftcms-docker/craft2.svg?&style=for-the-badge)](https://microbadger.com/images/wyveo/craftcms-docker)
 ```
 $ git clone -b craft2 --single-branch https://github.com/wyveo/craftcms-docker.git
 $ cd craftcms-docker

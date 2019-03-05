@@ -1,6 +1,6 @@
 FROM wyveo/nginx-php-fpm:php73
 
-MAINTAINER Colin Wilson "colin@wyveo.com"
+LABEL maintainer colin@wyveo.com
 
 # Remove existing webroot, configure PHP session handler for Redis, install postgresql-client (pg_dump)
 RUN rm -rf /usr/share/nginx/* && \

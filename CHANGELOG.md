@@ -1,3 +1,7 @@
+## [0.3.2] - 05-03-2019
+### Update
+- Update Craft to [3.1.16](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+
 ## [0.3.1] - 02-03-2019
 ### Update
 - Update Craft to [3.1.15](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

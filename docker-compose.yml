@@ -23,6 +23,7 @@ services:
 
         # REDIS is linked
         REDIS_HOST: redis
+        REDIS_PORT_6379_TCP: tcp://redis:6379
 
         # DB is linked
         DB_DRIVER: pgsql

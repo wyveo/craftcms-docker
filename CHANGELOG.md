@@ -1,3 +1,7 @@
+## [0.3.5] - 19-04-2019
+### Update
+- Update PHP `max_execution_time` to 120s
+
 ## [0.3.4] - 18-04-2019
 ### Update
 - Update Craft to [3.1.23](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

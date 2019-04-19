@@ -5,6 +5,7 @@ LABEL maintainer colin@wyveo.com
 # Remove existing webroot, configure PHP session handler for Redis, install postgresql-client (pg_dump)
 RUN rm -rf /usr/share/nginx/* && \
 sed -i -e "s/memory_limit\s*=\s*.*/memory_limit = 256M/g" ${php_conf} && \
+sed -i -e "s/max_execution_time\s*=\s*.*/max_execution_time = 120/g" ${php_conf} && \
 sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = redis/g" ${php_conf} && \
 sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \"\${REDIS_PORT_6379_TCP}\"/g" ${php_conf} && \
 wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \

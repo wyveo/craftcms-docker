@@ -1,3 +1,9 @@
+## [0.4.4] - 05-11-2019
+### Update
+- Upgrade Craft to [2.7.10](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)
+- Upgrade MariaDB to [10.4.8](https://mariadb.com/kb/en/library/mariadb-1043-release-notes/)
+- Upgrade Redis to [5.0.6](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
+
 ## [0.4.3] - 02-03-2019
 ### Update
 - Upgrade Craft to [2.7.5](https://github.com/craftcms/cms/blob/master-v2/CHANGELOG-v2.md)

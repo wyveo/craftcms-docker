@@ -11,7 +11,7 @@ sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \"\${REDIS_PORT_637
 wget -q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
 apt-get update && \
-apt-get install -y postgresql-client-10
+apt-get install -y postgresql-client-11
 
 # Create Craft project
 RUN composer create-project craftcms/craft /usr/share/nginx/

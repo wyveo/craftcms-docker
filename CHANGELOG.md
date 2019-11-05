@@ -1,3 +1,9 @@
+## [0.3.6] - 05-11-2019
+### Update
+- Update Craft to [3.3.14](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Upgrade Redis to [5.0.6](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
+- Update PostgreSQL to [11.5](https://www.postgresql.org/docs/11/release-11-5.html)
+
 ## [0.3.5] - 19-04-2019
 ### Update
 - Update PHP `max_execution_time` to 120s

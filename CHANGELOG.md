@@ -1,3 +1,10 @@
+## [0.3.8] - 11-03-2020
+### Update
+- Update Craft to [3.4.9](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Switch to PHP-FPM 7.4 image [wyveo/nginx-php-fpm:php74](https://github.com/wyveo/nginx-php-fpm/tree/php74)
+- Upgrade Redis to [5.0.7](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
+- Update PostgreSQL to [11.7](https://www.postgresql.org/docs/11/release-11-7.html)
+
 ## [0.3.7] - 05-11-2019
 ### Update
 - Update Craft to [3.3.15](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

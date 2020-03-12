@@ -1,4 +1,4 @@
-FROM wyveo/nginx-php-fpm:php73
+FROM wyveo/nginx-php-fpm:php74
 
 LABEL maintainer colin@wyveo.com
 

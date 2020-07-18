@@ -7,7 +7,7 @@ volumes:
 
 services:
     web:
-      image: wyveo/craftcms-docker:latest
+      image: wyveo/craftcms-docker:php74
       ports:
         - 80:80
       volumes:
@@ -37,7 +37,7 @@ services:
         LANG: C.UTF-8
 
     postgres:
-      image: postgres:11.7
+      image: postgres:12.3
       environment:
         POSTGRES_USER: craft3
         POSTGRES_PASSWORD: secret
@@ -48,6 +48,6 @@ services:
         - postgresql-data:/var/lib/postgresql/data
 
     redis:
-      image: redis:5.0.7-alpine
+      image: redis:6.0.5-alpine
       volumes:
         - /data:/data

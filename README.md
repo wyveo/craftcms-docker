@@ -1,15 +1,15 @@
-[![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-wyveo%2Fcraftcms--docker-blue.svg?&logo=docker&style=for-the-badge)](https://hub.docker.com/r/wyveo/craftcms-docker/) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?&style=for-the-badge)](https://github.com/wyveo/nginx-php-fpm/blob/master/LICENSE)
+[![Docker Hub; wyveo/craftcms-docker](https://img.shields.io/badge/docker%20hub-wyveo%2Fcraftcms--docker-blue.svg?&logo=docker&style=for-the-badge)](https://hub.docker.com/r/wyveo/craftcms-docker/) [![](https://badges.weareopensource.me/docker/pulls/wyveo/craftcms-docker?style=for-the-badge)](https://hub.docker.com/r/wyveo/craftcms-docker/) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?&style=for-the-badge)](https://github.com/wyveo/nginx-php-fpm/blob/master/LICENSE)
 ## Introduction
 This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) base running on the [nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm/) docker image.
 #### Versioning
 | Docker Tag | Git Branch | Craft Release | Database | Caching |
 |-----|-------|-----|--------|--------|
-| latest | craft3 | 3.4.9 | PostgreSQL 11.7 | Redis 5.0.7 |
+| latest | craft3 | 3.4.28.1 | PostgreSQL 12.3 | Redis 6.0.5 |
 | craft2 | craft2 | 2.7.10 | MariaDB 10.5.1 | Redis 5.0.7 |
 
 Features:
 
- - Nginx 1.17.x, PHP-FPM 7.4.x, Git 2.11.0
+ - Nginx 1.19.x, PHP-FPM 7.4.x, Git 2.11.0
  - imageMagick image manipulation library
 
 ## Clone repo and run

@@ -7,7 +7,7 @@ volumes:
 
 services:
     web:
-      image: wyveo/craftcms-docker:php74
+      image: wyveo/craftcms-docker:latest
       ports:
         - 80:80
       volumes:

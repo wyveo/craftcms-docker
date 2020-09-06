@@ -1,3 +1,9 @@
+## [0.4.0] - 06-09-2020
+### Update
+- Update Craft to [3.5.8](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Upgrade Redis to [6.0.7](https://raw.githubusercontent.com/antirez/redis/6.0/00-RELEASENOTES)
+- Update PostgreSQL to [12.4](https://www.postgresql.org/docs/12/release-12-3.html)
+
 ## [0.3.9] - 18-07-2020
 ### Update
 - Update Craft to [3.4.28.1](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

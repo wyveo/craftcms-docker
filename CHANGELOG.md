@@ -1,3 +1,8 @@
+## [0.4.1] - 21-09-2020
+### Update
+- Update Craft to [3.5.11.1](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)
+- Upgrade Redis to [6.0.8](https://raw.githubusercontent.com/antirez/redis/6.0/00-RELEASENOTES)
+
 ## [0.4.0] - 06-09-2020
 ### Update
 - Update Craft to [3.5.8](https://github.com/craftcms/cms/blob/develop/CHANGELOG-v3.md)

@@ -48,6 +48,6 @@ services:
         - postgresql-data:/var/lib/postgresql/data
 
     redis:
-      image: redis:6.0.7-alpine
+      image: redis:6.0.8-alpine
       volumes:
         - /data:/data

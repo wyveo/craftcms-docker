@@ -37,7 +37,7 @@ services:
         LANG: C.UTF-8
 
     postgres:
-      image: postgres:12.4
+      image: postgres:12.5
       environment:
         POSTGRES_USER: craft3
         POSTGRES_PASSWORD: secret
@@ -48,6 +48,6 @@ services:
         - postgresql-data:/var/lib/postgresql/data
 
     redis:
-      image: redis:6.0.8-alpine
+      image: redis:6.0.10-alpine
       volumes:
         - /data:/data

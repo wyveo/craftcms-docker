@@ -9,7 +9,7 @@ This is a  [Craft 3](https://craftcms.com/3) / [Craft 2](https://craftcms.com/) 
 
 Features:
 
- - Nginx 1.19.x, PHP-FPM 7.4.x, Git 2.11.0
+ - Nginx 1.19.x, PHP-FPM 8.0.x, Git 2.20.x
  - imageMagick image manipulation library
 
 ## Clone repo and run
